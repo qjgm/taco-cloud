@@ -46,11 +46,6 @@ public class DesignTacoController {
     // формы Taco design перед вызовом processDesign
     // ошибки будут помещены в объект errors
     public String processDesign(Taco design) {
-// Save the taco design...
-// We'll do this in chapter 3
-//        if (errors.hasErrors()) {
-//            return "design";
-//        }
         log.info("===Processing design: " + design);
         return "redirect:/orders/current";
     }
