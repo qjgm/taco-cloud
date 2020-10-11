@@ -27,7 +27,8 @@ public class JdbcIngredientRepository implements IngredientRepository {
         return jdbc.queryForObject("select id, name, type from Ingredient where id=?", this::mapRowToIngredient, id);
     }
 
-    @Override
+    //Two ways to save data with JdbcTemplate
+    //with update() method
     public Ingredient save(Ingredient ingredient) {
         jdbc.update(
                 "insert into Ingredient (id, name, type) values (?, ?, ?)",
@@ -36,6 +37,7 @@ public class JdbcIngredientRepository implements IngredientRepository {
                 ingredient.getType().toString());
         return ingredient;
     }
+    //with SimpleJdbcInsert wrapper class
 
     private Ingredient mapRowToIngredient(ResultSet rs, int rowNum) throws SQLException {
         return new Ingredient(

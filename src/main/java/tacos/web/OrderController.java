@@ -22,6 +22,9 @@ public class OrderController {
     }
 
     @PostMapping
+    // @Valid выполняет проверку запоненного данными из
+    // формы Taco design перед вызовом processDesign
+    // ошибки будут помещены в объект errors
     public String processOrder(@Valid Order order, Errors errors) {
         if (errors.hasErrors()) {
             return "orderForm";

@@ -3,7 +3,7 @@ package tacos;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-@Data// генерирует сеттеры геттеры
+@Data// генерирует геттеры\сеттеры
 @RequiredArgsConstructor
 public class Ingredient {
 

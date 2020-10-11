@@ -8,6 +8,8 @@
 target/
 *.iml
 
+*.png
+
 # Log file
 *.log
 
